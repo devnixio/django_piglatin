@@ -25,4 +25,4 @@ def translate(request):
             # translation += word
             # translation += 'consonent '
 
-    return HttpResponse(translation)
+    return render(request, 'translate.html', {'original': original, 'translation': translation})
