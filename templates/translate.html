@@ -1,21 +1,7 @@
-<!DOCTYPE html>
-<html>
+{% extends 'home.html' %}
 
-<head>
-    <meta charset="utf-8">
-    <title>Translation | Translator</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-</head>
+{% block translation %}
+<h3>Original:</h3> {{ original }}
 
-<body>
-    <h1>Piglatin Translator!</h1>
-
-    <h3>Original:</h3> {{ original }}
-
-    <h3>Translation</h3> {{ translation }}
-    <br><br>
-    <a href="{% url 'home' %}">New Translation</a>
-
-</body>
-
-</html>
+<h3>Translation</h3> {{ translation }}
+{% endblock %}

@@ -1,25 +1,42 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="utf-8">
-    <title>Home | Translator</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-</head>
+    <head>
+        <title>
+            Translator
+        </title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    </head>
 
-<body>
+    <body>
+        <div class="container">
+            <header>
+                <h1>
+                    <a href="{% url 'home' %}">Piglatin Translator!</a>
+                </h1>
+            </header>
 
-    <h1>Piglatin Translator!</h1>
+            <div class="">
+                <form action="{% url 'translate' %}">
+                    <input type="text" name="originaltext" />
+                    <br>
+                    <input type="submit" value="Translate" / />
+                </form>
+            </div>
 
-    <form action="{% url 'translate' %}">
-        <input type="text" name="originaltext" />
-        <br>
-        <input type="submit" value="Translate" / />
-    </form>
-    <br>
-    <br>
-    <a href="{% url 'about' %}">About</a>
+            {% block content %}
+            {% endblock %}
 
-</body>
+            {% block translation %}
+            {% endblock %}
+
+            <footer>
+                <a href="{% url 'about' %}">About</a>
+            </footer>
+
+        </div>
+    </body>
 
 </html>

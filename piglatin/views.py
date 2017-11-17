@@ -4,6 +4,7 @@ from django.shortcuts import render
 def home(request):
     return render(request, 'home.html')
 
+# Trnaslation starts here
 def translate(request):
     original = request.GET['originaltext'].lower()
 
