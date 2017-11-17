@@ -11,30 +11,42 @@
     </head>
 
     <body>
+        <br>
         <div class="container">
-            <header>
-                <h1>
-                    <a href="{% url 'home' %}">Piglatin Translator!</a>
-                </h1>
-            </header>
+            <div class="card text-center">
+                <header class="card-header">
+                    <h1>
+                        <a href="{% url 'home' %}">Piglatin Translator!</a>
+                    </h1>
+                </header>
 
-            <div class="">
-                <form action="{% url 'translate' %}">
-                    <input type="text" name="originaltext" />
-                    <br>
-                    <input type="submit" value="Translate" / />
-                </form>
+                <div class="card-body">
+                    <p class="card-text">Enter Text You Want Translated</p>
+                    <form action="{% url 'translate' %}">
+                        <input type="text" name="originaltext" />
+                        <br>
+                        <br>
+                        <input class="btn btn-primary" type="submit" value="Translate" / />
+                    </form>
+                </div>
             </div>
 
-            {% block content %}
-            {% endblock %}
+            <br>
+            <div class="row">
 
-            {% block translation %}
-            {% endblock %}
+                {% block content %}
+                {% endblock %}
 
-            <footer>
-                <a href="{% url 'about' %}">About</a>
-            </footer>
+                {% block translation %}
+
+                {% endblock %}
+            </div>
+
+            <div class="card text-center">
+                <footer>
+                    <a class="" href="{% url 'about' %}">About</a>
+                </footer>
+            </div>
 
         </div>
     </body>
