@@ -1,20 +1,18 @@
-{% extends 'home.html' %}
-
-    {% block translation %}
-        <div class="col-md-6">
-            <div class="card">
-                <h3 class="card-header">Original:</h3>
-                <div class="card-body">
-                    <p class="card-text">{{ original }}</p>
-                </div>
-            </div>
+{% extends 'home.html' %} {% block translation %}
+<div class="col-md-6">
+    <div class="card text-center">
+        <h3 class="card-header">Original:</h3>
+        <div class="card-body">
+            <p class="card-text">{{ original }}</p>
         </div>
-        <div class="col-md-6">
-            <div class="card">
-                <h3 class="card-header">Translation</h3>
-                <div class="card-body">
-                    <p class="card-text">{{ translation }}</p>
-                </div>
-            </div>
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="card text-center">
+        <h3 class="card-header">Translation</h3>
+        <div class="card-body">
+            <p class="card-text">{{ translation }}</p>
         </div>
-    {% endblock %}
+    </div>
+</div>
+{% endblock %}
