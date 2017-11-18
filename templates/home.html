@@ -1,54 +1,54 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <title>
-            Translator
-        </title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    </head>
+<head>
+    <title>
+        Translator
+    </title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
 
-    <body>
-        <br>
-        <div class="container">
-            <div class="card text-center">
-                <header class="card-header">
-                    <h1>
-                        <a href="{% url 'home' %}">Piglatin Translator!</a>
-                    </h1>
-                </header>
+<body>
+    <br>
+    <div class="container">
+        <div class="card text-center">
+            <header class="card-header">
+                <h1>
+                    <a href="{% url 'home' %}">Piglatin Translator!</a>
+                </h1>
+            </header>
 
-                <div class="card-body">
-                    <p class="card-text">Enter Text You Want Translated</p>
-                    <form action="{% url 'translate' %}">
-                        <input type="text" name="originaltext" />
-                        <br>
-                        <br>
-                        <input class="btn btn-primary" type="submit" value="Translate" / />
-                    </form>
-                </div>
+            <div class="card-body">
+                <p class="card-text">Enter Text You Want Translated</p>
+                <form action="{% url 'translate' %}">
+                    <input type="text" name="originaltext" />
+                    <br>
+                    <br>
+                    <input class="btn btn-primary" type="submit" value="Translate" / />
+                </form>
             </div>
-
-            <br>
-            <div class="row">
-
-                {% block content %}
-                {% endblock %}
-
-                {% block translation %}
-
-                {% endblock %}
-            </div>
-
-            <div class="card text-center">
-                <footer>
-                    <a class="" href="{% url 'about' %}">About</a>
-                </footer>
-            </div>
-
         </div>
-    </body>
+
+        <br>
+
+        <div class="row">
+            {% block content %} {% endblock %} {% block translation %} {% endblock %}
+        </div>
+
+        <br>
+
+        <div class="row">
+            <footer class="card text-center">
+                <div class="card-body">
+                    <h3 class="card-title">About</h3>
+                    <p class="card-text">A simple app built on the Django Framework to translate a given phrase into piglatin.</p>
+                </div>
+            </footer>
+        </div>
+
+    </div>
+</body>
 
 </html>
